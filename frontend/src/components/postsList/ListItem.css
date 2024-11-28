@@ -1,0 +1,21 @@
+.list-item-grid {
+    display: grid;
+    grid-template-columns: 10rem 20rem 10rem; /* Define tres filas con igual altura por defecto */
+    max-height: 70%; /* Ocupa toda la altura de la pantalla */
+    align-items: center;
+    width: 100%;
+    gap: 0px; /* Espacio entre las filas */
+    padding:0px;
+}
+
+.list-item-grid:hover {
+    background-color: gray;
+}
+
+li:nth-child(odd) {
+    background-color: #f4f4f4; /* Color claro */
+}
+
+li:nth-child(even) {
+    background-color: #e0e0e0; /* Color oscuro */
+}
