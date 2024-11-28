@@ -1,7 +1,7 @@
 .searchbar-form {
     display: flex; /* Coloca los elementos en una sola línea horizontal */
     width: 100%; /* Abarca toda la anchura del div contenedor */
-    gap: 50px; /* Espacio entre el input y el botón */
+    gap: 20rem; /* Espacio entre el input y el botón */
 }
 
 .searchbar-form-input {
@@ -9,7 +9,7 @@
     padding: 8px; /* Espaciado interno para mejor apariencia */
     border: 1px solid #ccc; /* Borde gris claro */
     border-radius: 4px; /* Bordes redondeados */
-    width: 20rem;
+    width: 10rem;
 }
 
 .searchbar-form-button {
@@ -23,4 +23,9 @@
 
 .searchbar-form-button:hover {
     background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.searchbar-form-button:disabled {
+    cursor:not-allowed;
+    background-color: #65affd; /* Color de fondo azul */
 }
