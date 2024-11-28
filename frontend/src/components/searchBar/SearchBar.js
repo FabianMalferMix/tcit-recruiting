@@ -13,7 +13,7 @@ const SearchBar = () => {
         <div className='searchbar-container'>
             <form className='searchbar-form' onSubmit={submitHandler}>
                 <input 
-                    type="text" className='searchbar-form-input' placeholder='Nombre Post'
+                    type="text" className='searchbar-form-input' placeholder='Buscar por nombre'
                     value={inputValue} onChange={(e)=>setInputValue(e.target.value)}
                 />
                 <button 
