@@ -46,11 +46,10 @@ const PostsList = () => {
     return(
         <div className='border-container'>
             <div className='postslist-container'>
-
                 <div className='postslist-header'> <ListHeader col1="Nombre" col2="Descripcion" col3="Accion"/> </div>
                 <ul className='posts-list'>
                     {DUMMY_DATA.map( post => {
-                        return <ListItem id={post.id} name={post.name} description={post.description}/>
+                        return <ListItem key={post.id} name={post.name} description={post.description}/>
                     })}
                 </ul>
             </div>
