@@ -1,14 +1,29 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #282c34;
+  height: 100vh;
+  padding:10px;
+  padding-top: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container-grid {
+display: grid;
+grid-template-rows: auto auto auto; /* Define tres filas con igual altura por defecto */
+max-height: 70%; /* Ocupa toda la altura de la pantalla */
+align-items: center;
+width: 500px;
+gap: 10px; /* Espacio entre las filas */
+padding:10px
+}
+
+.cell {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: auto;
+  justify-content: center; /* Centra el texto horizontalmente */
+  align-items: center; /* Centra el texto verticalmente */
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
 }
