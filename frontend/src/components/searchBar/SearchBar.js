@@ -1,10 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './SearchBar.css';
 
 const SearchBar = () => {
+
+    const [inputValue, setInputValue] = useState("");
+    const submitHandler = (e) => {
+        e.preventDefault();
+        console.log('Búsqueda de Post')
+    };
+
     return(
         <div className='searchbar-container'>
-            <h1>SearchBar</h1>
+            <form className='searchbar-form' onSubmit={submitHandler}>
+                <input 
+                    type="text" className='searchbar-form-input' placeholder='Nombre Post'
+                    value={inputValue} onChange={(e)=>setInputValue(e.target.value)}
+                />
+                <button 
+                    type="submit" className='searchbar-form-button' 
+                    disabled={!inputValue.trim()}
+                >
+                    Buscar Post
+                </button>
+
+            </form>
+    
         </div>
     )
 };
