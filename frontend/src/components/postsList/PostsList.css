@@ -1,0 +1,21 @@
+.border-container {
+    width: 100%;
+    box-sizing: border-box; /* Incluye el borde dentro del tamaño total del elemento */
+    height: 100%;
+}
+
+.postslist-container {
+    height: 100%; /* Adapta la altura al contenedor padre */
+    width: 100%;
+    display: flex; /* Asegura que el contenido respete el tamaño */
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    padding:0;
+    box-sizing: border-box; /* Incluye el borde dentro del tamaño total del elemento */
+}
+
+.posts-list {
+    margin:0;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
