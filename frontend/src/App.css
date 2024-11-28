@@ -12,7 +12,7 @@ display: grid;
 grid-template-rows: auto auto auto; /* Define tres filas con igual altura por defecto */
 max-height: 70%; /* Ocupa toda la altura de la pantalla */
 align-items: center;
-width: 500px;
+width: 45rem;
 gap: 10px; /* Espacio entre las filas */
 padding:10px
 }
