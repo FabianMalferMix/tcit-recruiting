@@ -1,0 +1,39 @@
+.list-item-grid {
+    display: grid;
+    grid-template-columns: 10rem 20rem 10rem; /* Define tres filas con igual altura por defecto */
+    max-height: 70%; /* Ocupa toda la altura de la pantalla */
+    align-items: center;
+    width: 100%;
+    gap: 0px; /* Espacio entre las filas */
+    padding:0px;
+}
+
+.list-item-grid:hover {
+    background-color: gray;
+}
+
+li:nth-child(odd) {
+    background-color: #f4f4f4; /* Color claro */
+}
+
+li:nth-child(even) {
+    background-color: #e0e0e0; /* Color oscuro */
+}
+
+
+.delete-post-button {
+    width: 100%; /* El botón ocupa todo el ancho del div */
+    height: 100%; /* El botón ocupa toda la altura del div */
+    background-color: inherit;
+    border: none; /* Elimina el borde por defecto */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    display: block; /* Asegura que el botón sea un bloque de nivel completo */
+    text-align: center; /* Centra el texto */
+    padding: 0; /* Elimina cualquier padding extra */
+}
+
+.delete-post-button:hover {
+    background-color: #b22121; /* Color de fondo inicial */
+    color:white
+}
