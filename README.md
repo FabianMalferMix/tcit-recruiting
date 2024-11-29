@@ -49,8 +49,34 @@ El presente proyecto es creado por mí, Fabián Malfer, para postular al cargo d
 El frontend estará disponible en el port 3000 y el backend en el port 3001
 
 <h3>IMPORTANTE</h3>
+
 1. Por alcance de nombres, sería bueno que no exista previamente en su PostreSQL una BD de nombre "postsdb", de lo contrario el proceso podría conflictuar con su estructura.
+
 2. El levantamiento del frontend se puede demorar un poco, pero hay que tener paciencia c:
+
+
+
+Para probar los endpoints de fetch, create y delete en Postman, se pueden utilizar los siguiente curl
+1. Petición GET (leer los posts):
+    ```bash
+        curl --location 'http://localhost:3001/api/posts'
+
+2. Peticion DELETE (eliminar post):
+    ```bash
+        curl --location --request DELETE 'http://localhost:3001/api/posts/<POST_ID>'
+        #El POST_ID es un int
+
+3. Peticion POST (crear post):
+    ```bash
+        curl --location 'http://localhost:3001/api/posts' \
+        --header 'Content-Type: application/json' \
+        --data '{
+        "id": <POST_ID>,
+        "name": <POST_NAME>, #str
+        "description": <POST_DESCRIPTION> #str
+}
+
+
 
 Saludos y buen día!
 
