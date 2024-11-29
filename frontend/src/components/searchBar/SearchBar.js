@@ -1,12 +1,19 @@
 import React, {useState} from 'react';
 import './SearchBar.css';
+import { useDispatch} from 'react-redux';
+import { setSearchAction } from '../../redux/actions/searchActions';
 
 const SearchBar = () => {
 
+    const dispatch = useDispatch()
+
     const [inputValue, setInputValue] = useState("");
+
     const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(setSearchAction(inputValue))
         console.log('Búsqueda de Post')
+        
     };
 
     return(

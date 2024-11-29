@@ -1,14 +1,35 @@
 import React, {useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createPostAction } from '../../redux/actions/postActions';
 import './PostMaker.css';
 
 const PostsMaker = () => {
 
+    const dispatch = useDispatch();
+    const posts = useSelector(state => state.posts.posts)
+
     const [nameInputValue, setNameInputValue] = useState("");
     const [descInputValue, setDescInputValue] = useState("");
 
+    const getNextId = () => {
+        if (posts && posts.length > 0) {
+            const maxId = Math.max(...posts.map(post => post.id));
+            return maxId + 1;
+        }
+        return 1;
+    };
+
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log('Creación de Post')
+        const newPost = {
+            id: getNextId(),
+            name: nameInputValue.trim(),
+            description: descInputValue.trim()
+        }
+        dispatch(createPostAction(newPost))
+
+        setNameInputValue("")
+        setDescInputValue("")
     };
 
     return(
@@ -28,9 +49,7 @@ const PostsMaker = () => {
                 >
                     Crear Post
                 </button>
-
             </form>
-    
         </div>
     )
 };
