@@ -6,7 +6,7 @@ import './PostMaker.css';
 const PostsMaker = () => {
 
     const dispatch = useDispatch();
-    const posts = useSelector(state => state.posts)
+    const posts = useSelector(state => state.posts.posts)
 
     const [nameInputValue, setNameInputValue] = useState("");
     const [descInputValue, setDescInputValue] = useState("");
