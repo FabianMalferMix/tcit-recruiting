@@ -2,7 +2,7 @@ import React from "react";
 import './ListItem.css';
 
 import { useDispatch } from "react-redux";
-import { deletePostAction } from "../../redux/actions/postActions";
+import { deletePostActionAS } from "../../redux/actions/postActions";
 
 const ListItem = props => {
 
@@ -10,7 +10,7 @@ const ListItem = props => {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        dispatch(deletePostAction({id:props.id, name:props.name, description:props.description}))
+        dispatch(deletePostActionAS({id:props.id, name:props.name, description:props.description}))
     }
 
     return(

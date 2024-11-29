@@ -1,4 +1,4 @@
-import { CREATE_POST, CREATE_POST_SUCCESS, CREATE_POST_ERROR, DELETE_POST, FETCH_POSTS, FETCH_POSTS_SUCCESS, FETCH_POSTS_ERROR } from "../constants"
+import { CREATE_POST, CREATE_POST_SUCCESS, CREATE_POST_ERROR, DELETE_POST, DELETE_POST_SUCCESS, DELETE_POST_ERROR, FETCH_POSTS, FETCH_POSTS_SUCCESS, FETCH_POSTS_ERROR } from "../constants"
 
 
 const initialState = {
@@ -16,24 +16,39 @@ const postsReducer = (state = initialState, action) => {
                 loading: true
             };
 
-            case CREATE_POST_SUCCESS:
-                return {
-                    ...state,
-                    loading: false,
-                    posts: [...state.posts, action.payload],
-                };
+        case CREATE_POST_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                posts: [...state.posts, action.payload],
+            };
 
-            case CREATE_POST_ERROR:
-                return {
-                    ...state,
-                    loading: false,
-                    error: action.payload,
-                };
+        case CREATE_POST_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
 
         case DELETE_POST:
             return {
                 ...state,
-                posts: state.posts.filter((post)=>post.id !== action.payload.id)
+                loading:true
+            };
+
+        case DELETE_POST_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                // posts: state.posts.posts.filter((post) => post.id !== action.payload),
+                posts: state.posts.filter((post) => post.id !== action.payload),
+            };
+
+        case DELETE_POST_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
             };
 
         case FETCH_POSTS:

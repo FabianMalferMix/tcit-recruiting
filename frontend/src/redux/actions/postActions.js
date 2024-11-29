@@ -1,4 +1,4 @@
-import { CREATE_POST, CREATE_POST_SUCCESS, CREATE_POST_ERROR, DELETE_POST, FETCH_POSTS, FETCH_POSTS_SUCCESS, FETCH_POSTS_ERROR } from "../constants";
+import { CREATE_POST, CREATE_POST_SUCCESS, CREATE_POST_ERROR, DELETE_POST, DELETE_POST_SUCCESS, DELETE_POST_ERROR, FETCH_POSTS, FETCH_POSTS_SUCCESS, FETCH_POSTS_ERROR } from "../constants";
 
 export const  createPostAction = (post) => {
     return {
@@ -35,12 +35,37 @@ export const createPostActionAS = (post) => async (dispatch) => {
             payload: error.message,
         });
     }
-}
+};
 
 export const  deletePostAction = (post) => {
     return {
         type: DELETE_POST,
         payload: post
+    }
+};
+
+export const deletePostActionAS = (post) => async(dispatch) => {
+    dispatch(deletePostAction(post));
+
+    try{
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/${post.id}`, {
+            method: 'DELETE',
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al eliminar el post');
+        }
+
+        dispatch({
+            type: DELETE_POST_SUCCESS,
+            payload: post.id,
+        });
+
+    } catch(error){
+        dispatch({
+            type: DELETE_POST_ERROR,
+            payload: error.message,
+        });
     }
 };
 
