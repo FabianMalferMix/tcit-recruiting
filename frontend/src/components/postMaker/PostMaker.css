@@ -27,6 +27,9 @@
     border: none; 
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2),  /* Sombra más cercana */
+        0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más difusa */
 }
 
 

@@ -74,9 +74,13 @@ Para probar los endpoints de fetch, create y delete en Postman, se pueden utiliz
         "id": <POST_ID>,
         "name": <POST_NAME>, #str
         "description": <POST_DESCRIPTION> #str
-}
 
 
+PS: Te pido disculpas de antemano por lo feo del front, me enfoqué en lo funcional y se me hizo poco el tiempo para dejarlo bonito. También hubieron cosas funcionales que no alcancé a hacer en el front pero que no alcancé a implementar y algunas son las siguientes:
+1. Validación de que, al crear un post, no se repita el nombre. No es estrictamente necesario pero creo que le habría dado mayor consistencia al trabajo.
+2. Hacer componentes modulares para poder reutilizarlos. Soy consciente de que utilizamos 3 <input> y 2 <button> (sin contar los botones de Eliminar). Me habría gustado implementar Componentes flexibles.
+3. Declarar colores en su código y no en su palabra ("black" por ejemplo en CSS)
+4. Mejores Loaders y pantallas de Error
 
 Saludos y buen día!
 
