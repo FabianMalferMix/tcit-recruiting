@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createPostAction } from '../../redux/actions/postActions';
+import { createPostActionAS } from '../../redux/actions/postActions';
 import './PostMaker.css';
 
 const PostsMaker = () => {
@@ -26,7 +26,7 @@ const PostsMaker = () => {
             name: nameInputValue.trim(),
             description: descInputValue.trim()
         }
-        dispatch(createPostAction(newPost))
+        dispatch(createPostActionAS(newPost))
 
         setNameInputValue("")
         setDescInputValue("")

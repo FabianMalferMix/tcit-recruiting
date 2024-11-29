@@ -1,4 +1,5 @@
 const sequelize = require('./config/db');
+const cors = require("cors")
 const Post = require('./models/post');
 const express = require('express');
 const postRoutes = require('./routes/postRoutes');
@@ -12,8 +13,14 @@ sequelize.sync({ force: false }) // Cambia a true solo si necesitas sobrescribir
 
 const app = express();
 
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST', 'DELETE'],  // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization']
+}))
 app.use(bodyParser.json());
 app.use('/api/posts', postRoutes);
+
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

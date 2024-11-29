@@ -1,4 +1,5 @@
-import {createStore, combineReducers} from "redux";
+import {createStore, combineReducers, applyMiddleware} from "redux";
+import {thunk} from "redux-thunk";
 import postsReducer from "./reducers/postReducer";
 import searchReducer from "./reducers/searchValueReducer";
 
@@ -7,6 +8,6 @@ const rootReducer = combineReducers({
     searchValue:searchReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store 
