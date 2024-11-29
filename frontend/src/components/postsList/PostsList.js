@@ -1,18 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { fetchPostsActionAS } from '../../redux/actions/postActions';
 import './PostsList.css';
 import ListHeader from './ListHeader';
 import ListItem from './ListItem';
 import GoBackButton from '../goBackButton/GoBackButton';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 const PostsList = () => {
 
-    const posts = useSelector((state) => state.posts.posts);
+    const dispatch = useDispatch()
+    // const posts = useSelector((state) => state.posts.posts);
+    const { posts, loading, error } = useSelector((state) => state.posts);
     const searchValue = useSelector(state => state.searchValue)
+
+    useEffect(() => {
+        dispatch(fetchPostsActionAS()); // Obtiene los posts al cargar el componente
+      }, [dispatch]);
 
     const renderingPosts = searchValue !== "" ? posts.filter(post => post.name === searchValue) : posts
 
+    if (loading) return <p>Cargando...</p>;
+
+    if (error) return <p>Error: {error}</p>;
+    
     if (posts.length === 0){
         return(
             <div><h2>No se encontraron Posts, intente creando uno</h2></div>
