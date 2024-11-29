@@ -2,6 +2,7 @@ import React from 'react';
 import './PostsList.css';
 import ListHeader from './ListHeader';
 import ListItem from './ListItem';
+import GoBackButton from '../goBackButton/GoBackButton';
 import { useSelector } from 'react-redux';
 
 
@@ -14,13 +15,16 @@ const PostsList = () => {
 
     if (posts.length === 0){
         return(
-            <div><h2>No se encontraron Posts</h2></div>
+            <div><h2>No se encontraron Posts, intente creando uno</h2></div>
         )
     }
 
     if (searchValue !== "" && renderingPosts.length === 0){
         return (
-            <h2>Búsqueda no entregó resultados</h2>
+            <div>
+                <h2>Búsqueda no entregó resultados, puede intentar con otra búsqueda o crear un Post.</h2>
+                <GoBackButton/>
+            </div>
         )
     }
     
