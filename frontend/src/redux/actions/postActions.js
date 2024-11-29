@@ -22,9 +22,8 @@ export const createPostActionAS = (post) => async (dispatch) => {
             throw new Error('Error al crear el post');
         }
       
-        const createdPost = await response.json(); // El backend devuelve el post creado
+        const createdPost = await response.json(); 
       
-        // Aquí se puede actualizar el estado global con el nuevo post
         dispatch({
             type: CREATE_POST_SUCCESS,
             payload: createdPost,
@@ -79,12 +78,12 @@ export const fetchPostsActionAS = () => async (dispatch) => {
     dispatch({type:FETCH_POSTS});
     try{
         const response = await fetch(process.env.REACT_APP_API_URL);
-        console.log('API Response:', response);  // Ver la respuesta completa
+        console.log('API Response:', response); 
         if (!response.ok) throw new Error("Error al obtener los posts");
         const data = await response.json();
         dispatch({ type: FETCH_POSTS_SUCCESS, payload: data });
     } catch (error) {
-        console.error('Fetch error:', error);  // Log para ver detalles del error
+        console.error('Fetch error:', error); 
         dispatch({ type: FETCH_POSTS_ERROR, payload: error.message });
     }
 };

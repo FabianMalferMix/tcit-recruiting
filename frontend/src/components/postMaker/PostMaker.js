@@ -53,5 +53,5 @@ const PostsMaker = () => {
         </div>
     )
 };
-// 
+
 export default PostsMaker

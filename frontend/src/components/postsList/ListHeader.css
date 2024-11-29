@@ -1,10 +1,10 @@
 .list-header-grid {
     display: grid;
-    grid-template-columns: 10rem 20rem 10rem; /* Define tres filas con igual altura por defecto */
-    max-height: 70%; /* Ocupa toda la altura de la pantalla */
+    grid-template-columns: 10rem 20rem 10rem; 
+    max-height: 70%; 
     align-items: center;
     width: 100%;
-    gap: 0px; /* Espacio entre las filas */
+    gap: 0px; 
     padding:0;
     border: 2px solid black
 }

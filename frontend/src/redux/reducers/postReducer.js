@@ -40,7 +40,6 @@ const postsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                // posts: state.posts.posts.filter((post) => post.id !== action.payload),
                 posts: state.posts.filter((post) => post.id !== action.payload),
             };
 
