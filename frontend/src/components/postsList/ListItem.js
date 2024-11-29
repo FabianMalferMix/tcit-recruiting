@@ -1,11 +1,16 @@
 import React from "react";
 import './ListItem.css';
 
+import { useDispatch } from "react-redux";
+import { deletePostAction } from "../../redux/actions/postActions";
+
 const ListItem = props => {
+
+    const dispatch = useDispatch()
 
     const clickHandler = (e) => {
         e.preventDefault();
-        console.log('Eliminar post')
+        dispatch(deletePostAction({id:props.id, name:props.name, description:props.description}))
     }
 
     return(
