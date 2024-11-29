@@ -1,5 +1,12 @@
-import {createStore} from "redux";
+import {createStore, combineReducers} from "redux";
 import postsReducer from "./reducers/postReducer";
+import searchReducer from "./reducers/searchValueReducer";
 
-const store = createStore(postsReducer);
+const rootReducer = combineReducers({
+    posts:postsReducer,
+    searchValue:searchReducer
+});
+
+const store = createStore(rootReducer);
+
 export default store 
