@@ -23,16 +23,13 @@ const PostsMaker = () => {
         e.preventDefault();
         const newPost = {
             id: getNextId(),
-            name: nameInputValue,
-            description: descInputValue
+            name: nameInputValue.trim(),
+            description: descInputValue.trim()
         }
         dispatch(createPostAction(newPost))
 
         setNameInputValue("")
         setDescInputValue("")
-        
-        console.log('id nuevo: ', newPost.id)
-        console.log('Creación de Post')
     };
 
     return(
