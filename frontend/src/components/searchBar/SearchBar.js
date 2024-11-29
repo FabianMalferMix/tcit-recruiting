@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './SearchBar.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { setSearchAction } from '../../redux/actions/searchActions';
 
 const SearchBar = () => {
 
     const dispatch = useDispatch()
-    // const searchValue = useSelector(state => state.searchValue)
 
     const [inputValue, setInputValue] = useState("");
 
