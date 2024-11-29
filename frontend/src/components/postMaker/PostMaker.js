@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { createPostAction } from '../../redux/actions/postActions';
 import './PostMaker.css';
 
 const PostsMaker = () => {
+
+    const dispatch = useDispatch();
 
     const [nameInputValue, setNameInputValue] = useState("");
     const [descInputValue, setDescInputValue] = useState("");
 
     const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(createPostAction({id:88, name:nameInputValue, description:descInputValue}))
         console.log('Creación de Post')
     };
 
@@ -28,9 +33,7 @@ const PostsMaker = () => {
                 >
                     Crear Post
                 </button>
-
             </form>
-    
         </div>
     )
 };
